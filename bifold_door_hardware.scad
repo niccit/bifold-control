@@ -6,6 +6,8 @@ use </home/ntynen/tmp/threads.scad>;
 door_hardware();
 // set to true if you want to print your own collar
 sleeve = false;
+button_head = false;
+top_threading = true;
 
 
 
@@ -38,11 +40,14 @@ module thread()
 }
 
 // The rod and button to complete the button head screw
-module rod(){
+module rod(height=36){
     union(){
-        cylinder(d=4, h=36);
-        translate([0, 0, 36-0.001])
+        cylinder(d=4, h=height);
+        if (button_head == true)
+        {
+            translate([0, 0, 36-0.001])
             cylinder(d=5.75, h=1);
+        }
     }
 }
 
@@ -54,20 +59,40 @@ module door_hardware()
         rotate([0, 90, 0])
             union()
                 {
-                    translate([0, 15, 0])
-                        rod();
-                    translate([0, 15, -11.5-0.001])
-                        thread();
+                    if (top_threading == true){
+                        translate([0, 15, 0])
+                            rod(24);
+                        translate([0, 15, - 11.5 - 0.001])
+                            thread();
+                        translate([0, 15, 24-0.001])
+                            thread();
+                    }
+                    else{
+                        translate([0, 15, 0])
+                            rod();
+                        translate([0, 15, - 11.5 - 0.001])
+                            thread();
+                    }
                 }
     }
     else {
         rotate([0, 90, 0])
             union()
                 {
-                    translate([0, 0, 0])
-                        rod();
-                    translate([0, 0, -11.5-0.001])
-                        thread();
+                    if (top_threading == true){
+                        translate([0, 15, 0])
+                            rod(24);
+                        translate([0, 15, - 11.5 - 0.001])
+                            thread();
+                        translate([0, 15, 24-0.001])
+                            thread();
+                    }
+                    else{
+                        translate([0, 15, 0])
+                            rod();
+                        translate([0, 15, - 11.5 - 0.001])
+                            thread();
+                    }
                 }
     }
 }
