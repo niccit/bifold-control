@@ -1,15 +1,18 @@
 # bifold-control
 
-This project provides a longer stem, with an M4 screw thread at one end and a collar with a slot for gluing the stem to it.
+This project provides a way to add custom door pulls to bifold doors
 
-The bifold doors in my house had decorative handles that were falling off, and the screws being used were very short and hard to work with.
+The bifold doors in my house had decorative handles that were falling off, and repairing the ones that were there turned out to be futile and I didn't like what was available to purchase
 
-I ended up just using the button head screw with the old hardware, and creative use of different glues.
+This project provides:
 
-However, I left the sleeve, just in case it's needed for a different implementation.
+* A door fitment with opening to insert an M4-.70x45 bolt and secure with an M4 nut
+* A doorknob 
 
-![button head screw and collar](bifold_door_hardware.png)
+I used a Snapmaker U1 to 3D Print. Filaments used:
 
-Included in the code is a spacer that you can configure as needed.
+* Comgrow Basic PLA - Blue
+* Comgrow Shiny Silk PLA - Rainbow
+* Snapmaker Snapspeed PLA - White
 
-![spacer](spacer.png)
+![Finished Product](door_pulls.jpg)_
